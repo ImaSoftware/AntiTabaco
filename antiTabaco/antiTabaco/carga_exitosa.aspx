@@ -17,6 +17,8 @@
         <asp:Panel ID="pnlCtl1" class="w3-card-4" runat="server">
             <div class="w3-theme-l4"><p>La carga se realizó exitosamente. clic en el boton para ingresar una nueva espirometría</p></div>
             <div class="w3-theme-l4 "  style ="text-align :right;">
+                <asp:Button ID="btnLogout" runat="server" Text="Cerrar Sesion" class="w3-button w3-xlarge  w3-theme-action" >
+                </asp:Button>
                 <asp:Button ID="btnVolver" runat="server" Text="Nueva Espirometría" class="w3-button w3-xlarge  w3-theme-action" >
                 </asp:Button>
             </div>

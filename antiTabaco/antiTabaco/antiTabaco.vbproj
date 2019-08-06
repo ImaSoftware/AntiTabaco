@@ -99,6 +99,7 @@
     <Content Include="encuesta.aspx" />
     <Content Include="espirometria.aspx" />
     <Content Include="css\w3.css" />
+    <Content Include="Login.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -123,6 +124,14 @@
     </Compile>
     <Compile Include="espirometria.aspx.vb">
       <DependentUpon>espirometria.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Funciones.vb" />
+    <Compile Include="Login.aspx.designer.vb">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.vb">
+      <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />

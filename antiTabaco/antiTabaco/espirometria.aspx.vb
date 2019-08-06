@@ -5,6 +5,11 @@ Public Class espirometria
     Inherits System.Web.UI.Page
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        If Session("idusr") Is Nothing Then
+            Response.Redirect("Login.aspx")
+        End If
+
+
         If IsPostBack Then
             lblMsg.Visible = False
         End If
@@ -39,15 +44,15 @@ Public Class espirometria
         Dim preg16 As String = Request("chk16")
         'Validaciones
         If String.IsNullOrEmpty(fecha) Then
-            MsgError("Por favor ingresar fecha")
+            MsgError("Por favor ingresar fecha", Me.lblMsg)
             Exit Sub
         End If
         If String.IsNullOrEmpty(Nombre) Then
-            MsgError("Por favor ingresar nombre")
+            MsgError("Por favor ingresar nombre", Me.lblMsg)
             Exit Sub
         End If
         If String.IsNullOrEmpty(fecNace) Then
-            MsgError("Por favor ingresar Fecha de nacimiento")
+            MsgError("Por favor ingresar Fecha de nacimiento", Me.lblMsg)
         End If
         Try
             'Validacion de fecha de nacimiento. NO mayor  a 25 años
@@ -55,11 +60,11 @@ Public Class espirometria
             DateTime.TryParseExact(fecNace, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, dateNace)
             edad = DateDiff(DateInterval.Year, dateNace, Now)
             If edad > 25 Then
-                MsgError("El rango de edades máximo es de 25 años")
+                MsgError("El rango de edades máximo es de 25 años", Me.lblMsg)
                 Exit Sub
             End If
         Catch ex As Exception
-            MsgError("Error en el proceso de validacion:" & ex.Message)
+            MsgError("Error en el proceso de validacion:" & ex.Message, Me.lblMsg)
             Exit Sub
         End Try
         Dim pList As New List(Of SqlParameter)
@@ -86,21 +91,19 @@ Public Class espirometria
         pList.Add(New SqlParameter("@preg16", preg16))
         pList.Add(New SqlParameter("@prov", provincia))
         pList.Add(New SqlParameter("@fac", facultad))
+        pList.Add(New SqlParameter("@ced", Session("idusr")))
         Dim nuevoSec As Integer = IngresarPaso(1, pList)
         If nuevoSec <> -1 Then
             Session("secuencial") = nuevoSec
             pnlCtl1.Visible = False
             pnlCtl2.Visible = True
         Else
-            MsgError("Error al insertar el registro")
+            MsgError("Error al insertar el registro", Me.lblMsg)
             Exit Sub
         End If
 
     End Sub
-    Sub MsgError(ByVal msg As String)
-        lblMsg.Visible = True
-        lblMsg.Text = msg
-    End Sub
+
     Function IngresarPaso(ByVal paso As Integer, ByVal parametros As List(Of SqlParameter)) As Integer
         Try
             IngresarPaso = -1
@@ -112,18 +115,18 @@ Public Class espirometria
                     cmdStr = cmdStr & ",pregunta_1_1,pregunta_1_2,pregunta_1_3,pregunta_1_4"
                     cmdStr = cmdStr & ",pregunta_1_5,pregunta_1_6,pregunta_1_7,pregunta_1_8"
                     cmdStr = cmdStr & ",pregunta_1_9,pregunta_1_10,pregunta_1_11,pregunta_1_12"
-                    cmdStr = cmdStr & ",pregunta_1_13,pregunta_1_14,pregunta_1_15,pregunta_1_16,provincia,facultad"
+                    cmdStr = cmdStr & ",pregunta_1_13,pregunta_1_14,pregunta_1_15,pregunta_1_16,provincia,facultad, id_usr"
                     cmdStr = cmdStr & ") output INSERTED.id_espirometria values(@fec,@nom,@age,"
                     cmdStr = cmdStr & "@sex,@born,@preg1,@preg2,@preg3,@preg4,@preg5,@preg6"
                     cmdStr = cmdStr & ",@preg7,@preg8,@preg9,@preg10,@preg11,@preg12,@preg13"
-                    cmdStr = cmdStr & ",@preg14,@preg15,@preg16,@prov,@fac)"
+                    cmdStr = cmdStr & ",@preg14,@preg15,@preg16,@prov,@fac,@ced)"
                 Case 2
                     cmdStr = "Update espirometria set pregunta_2_1 = @preg1, pregunta_2_2 = @preg2,"
                     cmdStr = cmdStr & "pregunta_2_3 = @preg3, pregunta_2_4 = @preg4,"
                     cmdStr = cmdStr & "pregunta_2_5 = @preg5, pregunta_2_6 = @preg6,"
                     cmdStr = cmdStr & "pregunta_2_7 = @preg7, altura= @alt, peso= @peso,"
                     cmdStr = cmdStr & "etnia= @etnia, fumador = @fuma, fvc= @fvc, fev1= @fev1,"
-                    cmdStr = cmdStr & "pef= @pef where id_espirometria = @id_esp"
+                    cmdStr = cmdStr & "pef= @pef ,fvcp= @fvcp, fev1p= @fev1p, pefp= @pefp where id_espirometria = @id_esp"
                 Case 3
             End Select
             Dim comm As New SqlCommand(cmdStr, conn)
@@ -136,23 +139,28 @@ Public Class espirometria
                 If conn.State = ConnectionState.Open Then
                     conn.Close()
                 End If
+
+                Dim tr_mail As String = "holgerveloz@gmail.com"
+                Dim eSend As mailSender = New mailSender(My.Settings.mail_Usr,
+                    My.Settings.mail_Pwd, My.Settings.smtpServer, My.Settings.Puerto, My.Settings.SSL)
+                eSend.EnviarMensaje(tr_mail, "Nuevo registro id = " & IngresarPaso.ToString() & ". Usuario: " & Session("idusr"), "Registro se ha agregado.")
             ElseIf paso = 2 Then
                 comm.ExecuteScalar()
                 IngresarPaso = 0
             End If
         Catch ex As Exception
-            MsgError("Error al ejecutar el paso:" & ex.Message)
+            MsgError("Error al ejecutar el paso:" & ex.Message, Me.lblMsg)
             Return -1
         End Try
     End Function
 
     Protected Sub btnNext2_Click(sender As Object, e As EventArgs) Handles btnNext2.Click
         If Session("secuencial") Is Nothing Then
-            MsgError("Secuencial no valido")
+            MsgError("Secuencial no valido", Me.lblMsg)
             Exit Sub
         End If
         If Session("secuencial") = -1 Then
-            MsgError("Secuencial no valido")
+            MsgError("Secuencial no valido", Me.lblMsg)
             Exit Sub
         End If
         'Lectura de la interfaz
@@ -170,6 +178,9 @@ Public Class espirometria
         Dim FVC As String = Request("FVC")
         Dim FEV1 As String = Request("FEV1")
         Dim PEF As String = Request("PEF")
+        Dim FVCP As String = Request("FVCP")
+        Dim FEV1P As String = Request("FEV1P")
+        Dim PEFP As String = Request("PEFP")
         Dim pList As New List(Of SqlParameter)
         pList.Add(New SqlParameter("@preg1", preg1))
         pList.Add(New SqlParameter("@preg2", preg2))
@@ -185,14 +196,21 @@ Public Class espirometria
         pList.Add(New SqlParameter("@fvc", FVC))
         pList.Add(New SqlParameter("@fev1", FEV1))
         pList.Add(New SqlParameter("@pef", PEF))
+        pList.Add(New SqlParameter("@fvcp", FVCP))
+        pList.Add(New SqlParameter("@fev1p", FEV1P))
+        pList.Add(New SqlParameter("@pefp", PEFP))
         pList.Add(New SqlParameter("@id_esp", Session("secuencial")))
         Dim res As Integer = IngresarPaso(2, pList)
         If res <> 0 Then
-            MsgError("Error al insertar el registro")
+            MsgError("Error al insertar el registro", Me.lblMsg)
             Exit Sub
         Else
             Session("secuencial") = Nothing
             Response.Redirect("carga_exitosa.aspx")
         End If
+    End Sub
+
+    Protected Sub btnsalir_Click(sender As Object, e As EventArgs) Handles btnsalir.Click
+        Response.Redirect("Login.aspx")
     End Sub
 End Class

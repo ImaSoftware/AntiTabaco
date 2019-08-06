@@ -8,4 +8,8 @@
     Protected Sub btnVolver_Click(sender As Object, e As EventArgs) Handles btnVolver.Click
         Response.Redirect("espirometria.aspx")
     End Sub
+
+    Protected Sub btnLogout_Click(sender As Object, e As EventArgs) Handles btnLogout.Click
+        Response.Redirect("Login.aspx")
+    End Sub
 End Class

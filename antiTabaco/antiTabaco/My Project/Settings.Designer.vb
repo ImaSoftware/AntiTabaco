@@ -57,11 +57,57 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=MIPORTATIL;Initial Catalog=antitabaco;Persist Security Info=True;User"& _ 
-            " ID=sa;Password=svasrv2015")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("workstation id=antitabaco.mssql.somee.com;packet size=4096;user id=terres_db;pwd="& _ 
+            "Anti_taba2019;data source=antitabaco.mssql.somee.com;persist security info=False"& _ 
+            ";initial catalog=antitabaco")>  _
         Public ReadOnly Property conn_BD() As String
             Get
                 Return CType(Me("conn_BD"),String)
+            End Get
+        End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("imasoftware2019@gmail.com")>  _
+        Public ReadOnly Property mail_Usr() As String
+            Get
+                Return CType(Me("mail_Usr"),String)
+            End Get
+        End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("svasrv2015")>  _
+        Public ReadOnly Property mail_Pwd() As String
+            Get
+                Return CType(Me("mail_Pwd"),String)
+            End Get
+        End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("smtp.gmail.com")>  _
+        Public ReadOnly Property smtpServer() As String
+            Get
+                Return CType(Me("smtpServer"),String)
+            End Get
+        End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("587")>  _
+        Public ReadOnly Property Puerto() As String
+            Get
+                Return CType(Me("Puerto"),String)
+            End Get
+        End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
+        Public ReadOnly Property SSL() As Boolean
+            Get
+                Return CType(Me("SSL"),Boolean)
             End Get
         End Property
     End Class

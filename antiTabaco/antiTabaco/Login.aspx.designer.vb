@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class carga_exitosa
+Partial Public Class Login
     
     '''<summary>
     '''Control form1.
@@ -23,29 +23,29 @@ Partial Public Class carga_exitosa
     Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
     
     '''<summary>
-    '''Control pnlCtl1.
+    '''Control lblMsg.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents pnlCtl1 As Global.System.Web.UI.WebControls.Panel
+    Protected WithEvents lblMsg As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
-    '''Control btnLogout.
+    '''Control txtCedula.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents btnLogout As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents txtCedula As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''Control btnVolver.
+    '''Control btnIniciar.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents btnVolver As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents btnIniciar As Global.System.Web.UI.WebControls.Button
 End Class

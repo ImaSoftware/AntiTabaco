@@ -19,11 +19,12 @@
 
     <form id="form1" runat="server">
         <div class="w3-container w3-theme w3-card">
-            <h1>Espirometria</h1>
+            <h1>Espirometria &nbsp&nbsp&nbsp<asp:Button ID="btnsalir" runat="server" Text="CerrarSesion" class="w3-button w3-xlarge  w3-theme-action" >
+                </asp:Button>
+            </h1>
         </div>
         <div class="w3-theme-l4"><p><b>
-            <asp:Label ID="lblMsg" runat="server" Text="" Visible="False">
-            </asp:Label></b></p>
+            <asp:Label ID="lblMsg" runat="server" Visible="False" ForeColor="#FF3300"></asp:Label></b></p>
         </div>
         <asp:Panel ID="pnlCtl1" class="w3-card-4" runat="server">
             <div class="w3-theme-l4"><p><b>Datos Generales</b></p></div>
@@ -257,17 +258,20 @@
             <div class="w3-theme-l4"><p><b>Valores Espirometría</b></p></div>
             <div class="w3-theme-l5"><p>FVC</p>
                 <div style="padding-left:5%">
-                    <input id="FVC"  class="w3-border" type="number" style="width:20%" name="FVC" value="0">&nbsp  ml
+                    <input id="FVC"  class="w3-border" type="number" style="width:20%" name="FVC" step="any" value="0">&nbsp  ml &nbsp  &nbsp 
+                    <input id="FVCP"  class="w3-border" type="number" style="width:20%" name="FVCP" step="any" value="0">&nbsp  %
                 </div>
             </div>
             <div class="w3-theme-l5"><p>FEV1</p>
                 <div style="padding-left:5%">
-                    <input id="FEV1"  class="w3-border" type="number" style="width:20%" name="FEV1" value="0">&nbsp  ml
+                    <input id="FEV1"  class="w3-border" type="number" style="width:20%" name="FEV1" step="any" value="0">&nbsp  ml &nbsp &nbsp 
+                    <input id="FEV1P"  class="w3-border" type="number" style="width:20%" name="FEV1P" step="any" value="0">&nbsp  %
                 </div>
             </div>
             <div class="w3-theme-l5"><p>PEF</p>
                 <div style="padding-left:5%">
-                    <input id="PEF"  class="w3-border" type="number" style="width:20%" name="PEF" value="0">&nbsp  ml
+                    <input id="PEF"  class="w3-border" type="number" style="width:20%" name="PEF" step="any" value="0">&nbsp  ml &nbsp  &nbsp 
+                    <input id="PEFP"  class="w3-border" type="number" style="width:20%" name="PEFP" step="any" value="0">&nbsp  %
                 </div>
             </div>
             <div class="w3-theme-l4 "  style ="text-align :right;">
