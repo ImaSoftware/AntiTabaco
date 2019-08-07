@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class espirometria
+Partial Public Class Registrar
     
     '''<summary>
     '''Control form1.
@@ -23,15 +23,6 @@ Partial Public Class espirometria
     Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
     
     '''<summary>
-    '''Control btnsalir.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents btnsalir As Global.System.Web.UI.WebControls.Button
-    
-    '''<summary>
     '''Control lblMsg.
     '''</summary>
     '''<remarks>
@@ -41,92 +32,56 @@ Partial Public Class espirometria
     Protected WithEvents lblMsg As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
-    '''Control pnlCtl1.
+    '''Control txtCedula.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents pnlCtl1 As Global.System.Web.UI.WebControls.Panel
+    Protected WithEvents txtCedula As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''Control dtfecha.
+    '''Control txtNombres.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents dtfecha As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txtNombres As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''Control txtNombre.
+    '''Control txtCelu.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txtNombre As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txtCelu As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''Control dtNace.
+    '''Control txtemail.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents dtNace As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txtemail As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''Control cmbFacultad.
+    '''Control btnLogin.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents cmbFacultad As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents btnLogin As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
-    '''Control cmbProvincia.
+    '''Control btnGuardar.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents cmbProvincia As Global.System.Web.UI.WebControls.DropDownList
-    
-    '''<summary>
-    '''Control btnNext1.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents btnNext1 As Global.System.Web.UI.WebControls.Button
-    
-    '''<summary>
-    '''Control pnlCtl2.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents pnlCtl2 As Global.System.Web.UI.WebControls.Panel
-    
-    '''<summary>
-    '''Control txtComm.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents txtComm As Global.System.Web.UI.WebControls.TextBox
-    
-    '''<summary>
-    '''Control btnNext2.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents btnNext2 As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents btnGuardar As Global.System.Web.UI.WebControls.Button
 End Class

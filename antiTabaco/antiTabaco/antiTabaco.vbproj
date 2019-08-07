@@ -95,11 +95,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="carga_exitosa.aspx" />
+    <Content Include="contacto.aspx" />
     <Content Include="css\w3-theme-cyan.css" />
     <Content Include="encuesta.aspx" />
     <Content Include="espirometria.aspx" />
     <Content Include="css\w3.css" />
     <Content Include="Login.aspx" />
+    <Content Include="Registrar.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -110,6 +112,13 @@
     </Compile>
     <Compile Include="carga_exitosa.aspx.vb">
       <DependentUpon>carga_exitosa.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="contacto.aspx.designer.vb">
+      <DependentUpon>contacto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="contacto.aspx.vb">
+      <DependentUpon>contacto.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="encuesta.aspx.designer.vb">
@@ -152,6 +161,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Registrar.aspx.designer.vb">
+      <DependentUpon>Registrar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Registrar.aspx.vb">
+      <DependentUpon>Registrar.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>

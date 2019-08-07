@@ -24,10 +24,10 @@ Public Class Login
                 da.Fill(resquery)
                 If resquery.Rows.Count > 0 Then
                     Session("idusr") = txtCedula.Text
-                    Session("nameusr") = resquery.Rows(0).Item("Nombre")
+                    Session("nameusr") = resquery.Rows(0).Item("Nombres")
                     Response.Redirect("espirometria.aspx")
                 Else
-                    MsgError("Su identificación no se encuentra registrada. Contacte al administrador", Me.lblMsg)
+                    MsgError("Su identificación no se encuentra registrada. Haga clic en el boton Registrarme", Me.lblMsg)
                 End If
                 conn.Close()
             End Using
@@ -35,5 +35,13 @@ Public Class Login
         Catch ex As Exception
             MsgError("Error al recuperar informacion del servidor." & ex.Message, Me.lblMsg)
         End Try
+    End Sub
+
+    Protected Sub btnRegistrar_Click(sender As Object, e As EventArgs) Handles btnRegistrar.Click
+        Response.Redirect("Registrar.aspx")
+    End Sub
+
+    Protected Sub btnContacto_Click(sender As Object, e As EventArgs) Handles btnContacto.Click
+        Response.Redirect("contacto.aspx")
     End Sub
 End Class

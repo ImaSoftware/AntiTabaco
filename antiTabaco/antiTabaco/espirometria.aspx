@@ -274,6 +274,11 @@
                     <input id="PEFP"  class="w3-border" type="number" style="width:20%" name="PEFP" step="any" value="0">&nbsp  %
                 </div>
             </div>
+            <div class="w3-theme-l5"><p>Comentario</p>
+                <div style="padding-left:5%">
+                    <asp:TextBox ID="txtComm"  class="w3-border" runat="server" TextMode="MultiLine" Height="195px" Width="100%"></asp:TextBox>
+                </div>
+            </div>
             <div class="w3-theme-l4 "  style ="text-align :right;">
                 <asp:Button ID="btnNext2" runat="server" Text="Terminar" class="w3-button w3-xlarge  w3-theme-action" >
                 </asp:Button>

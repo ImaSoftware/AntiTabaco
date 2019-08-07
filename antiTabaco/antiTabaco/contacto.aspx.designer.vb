@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class Login
+Partial Public Class contacto
     
     '''<summary>
     '''Control form1.
@@ -32,38 +32,47 @@ Partial Public Class Login
     Protected WithEvents lblMsg As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
-    '''Control txtCedula.
+    '''Control hlink1.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txtCedula As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents hlink1 As Global.System.Web.UI.WebControls.HyperLink
     
     '''<summary>
-    '''Control btnContacto.
+    '''Control txtNombres.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents btnContacto As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents txtNombres As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''Control btnRegistrar.
+    '''Control txtmsg.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents btnRegistrar As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents txtmsg As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''Control btnIniciar.
+    '''Control btnret.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents btnIniciar As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents btnret As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''Control btnSend.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btnSend As Global.System.Web.UI.WebControls.Button
 End Class

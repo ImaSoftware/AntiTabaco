@@ -126,7 +126,7 @@ Public Class espirometria
                     cmdStr = cmdStr & "pregunta_2_5 = @preg5, pregunta_2_6 = @preg6,"
                     cmdStr = cmdStr & "pregunta_2_7 = @preg7, altura= @alt, peso= @peso,"
                     cmdStr = cmdStr & "etnia= @etnia, fumador = @fuma, fvc= @fvc, fev1= @fev1,"
-                    cmdStr = cmdStr & "pef= @pef ,fvcp= @fvcp, fev1p= @fev1p, pefp= @pefp where id_espirometria = @id_esp"
+                    cmdStr = cmdStr & "pef= @pef ,fvcp= @fvcp, fev1p= @fev1p, pefp= @pefp, obs = @obs where id_espirometria = @id_esp"
                 Case 3
             End Select
             Dim comm As New SqlCommand(cmdStr, conn)
@@ -181,6 +181,7 @@ Public Class espirometria
         Dim FVCP As String = Request("FVCP")
         Dim FEV1P As String = Request("FEV1P")
         Dim PEFP As String = Request("PEFP")
+        Dim obs As String = txtComm.Text
         Dim pList As New List(Of SqlParameter)
         pList.Add(New SqlParameter("@preg1", preg1))
         pList.Add(New SqlParameter("@preg2", preg2))
@@ -200,6 +201,7 @@ Public Class espirometria
         pList.Add(New SqlParameter("@fev1p", FEV1P))
         pList.Add(New SqlParameter("@pefp", PEFP))
         pList.Add(New SqlParameter("@id_esp", Session("secuencial")))
+        pList.Add(New SqlParameter("@obs", obs))
         Dim res As Integer = IngresarPaso(2, pList)
         If res <> 0 Then
             MsgError("Error al insertar el registro", Me.lblMsg)
