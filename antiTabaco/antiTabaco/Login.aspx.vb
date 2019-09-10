@@ -25,7 +25,7 @@ Public Class Login
                 If resquery.Rows.Count > 0 Then
                     Session("idusr") = txtCedula.Text
                     Session("nameusr") = resquery.Rows(0).Item("Nombres")
-                    Response.Redirect("espirometria.aspx")
+                    Response.Redirect("encuesta.aspx")
                 Else
                     MsgError("Su identificación no se encuentra registrada. Haga clic en el boton Registrarme", Me.lblMsg)
                 End If

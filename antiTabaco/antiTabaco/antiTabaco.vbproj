@@ -53,6 +53,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DataVisualization" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -100,6 +101,7 @@
     <Content Include="encuesta.aspx" />
     <Content Include="espirometria.aspx" />
     <Content Include="css\w3.css" />
+    <Content Include="Informe.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Registrar.aspx" />
     <Content Include="Web.config">
@@ -136,12 +138,24 @@
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Funciones.vb" />
+    <Compile Include="Informe.aspx.designer.vb">
+      <DependentUpon>Informe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Informe.aspx.vb">
+      <DependentUpon>Informe.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="Login.aspx.designer.vb">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.vb">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="miningEntity.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>miningEntity.xsd</DependentUpon>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -177,8 +191,20 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="rdlcs\repoInfo.rdlc" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="miningEntity.xsc">
+      <DependentUpon>miningEntity.xsd</DependentUpon>
+    </Content>
+    <None Include="miningEntity.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>miningEntity.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="miningEntity.xss">
+      <DependentUpon>miningEntity.xsd</DependentUpon>
+    </Content>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

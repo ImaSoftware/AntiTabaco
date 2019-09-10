@@ -6,7 +6,7 @@
     End Sub
 
     Protected Sub btnVolver_Click(sender As Object, e As EventArgs) Handles btnVolver.Click
-        Response.Redirect("espirometria.aspx")
+        Response.Redirect("encuesta.aspx")
     End Sub
 
     Protected Sub btnLogout_Click(sender As Object, e As EventArgs) Handles btnLogout.Click
