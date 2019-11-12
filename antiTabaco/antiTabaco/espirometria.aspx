@@ -15,8 +15,8 @@
     <link rel="stylesheet" href="css/w3-theme-cyan.css">
     <title>Ingresar Espirometría</title>
 </head>
-<body>
 
+<body>
     <form id="form1" runat="server">
         <div class="w3-container w3-theme w3-card">
             <h1>Espirometria &nbsp&nbsp&nbsp<asp:Button ID="btnsalir" runat="server" Text="CerrarSesion" class="w3-button w3-xlarge  w3-theme-action" >

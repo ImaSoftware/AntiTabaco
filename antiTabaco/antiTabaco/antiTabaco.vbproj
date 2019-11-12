@@ -98,6 +98,8 @@
     <Content Include="carga_exitosa.aspx" />
     <Content Include="contacto.aspx" />
     <Content Include="css\w3-theme-cyan.css" />
+    <Content Include="css\w3_1.css" />
+    <Content Include="cuestionario.aspx" />
     <Content Include="encuesta.aspx" />
     <Content Include="espirometria.aspx" />
     <Content Include="css\w3.css" />
@@ -121,6 +123,13 @@
     </Compile>
     <Compile Include="contacto.aspx.vb">
       <DependentUpon>contacto.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="cuestionario.aspx.designer.vb">
+      <DependentUpon>cuestionario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cuestionario.aspx.vb">
+      <DependentUpon>cuestionario.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="encuesta.aspx.designer.vb">
