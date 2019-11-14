@@ -59,15 +59,6 @@ Partial Public Class cuestionario
     Protected WithEvents noPreg As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''Control chkRandom.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents chkRandom As Global.System.Web.UI.WebControls.CheckBox
-    
-    '''<summary>
     '''Control iniPreg.
     '''</summary>
     '''<remarks>
@@ -77,6 +68,15 @@ Partial Public Class cuestionario
     Protected WithEvents iniPreg As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
+    '''Control chkRandom.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents chkRandom As Global.System.Web.UI.WebControls.CheckBox
+    
+    '''<summary>
     '''Control chkResp.
     '''</summary>
     '''<remarks>
@@ -84,6 +84,15 @@ Partial Public Class cuestionario
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents chkResp As Global.System.Web.UI.WebControls.CheckBox
+    
+    '''<summary>
+    '''Control chkDesord.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents chkDesord As Global.System.Web.UI.WebControls.CheckBox
     
     '''<summary>
     '''Control btnGenerar.
@@ -104,6 +113,33 @@ Partial Public Class cuestionario
     Protected WithEvents pnlCuestionario As Global.System.Web.UI.WebControls.Panel
     
     '''<summary>
+    '''Control btnRet.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btnRet As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''Control pnlCalif.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents pnlCalif As Global.System.Web.UI.WebControls.Panel
+    
+    '''<summary>
+    '''Control btnCalif.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btnCalif As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
     '''Control pnlRes.
     '''</summary>
     '''<remarks>
@@ -111,4 +147,31 @@ Partial Public Class cuestionario
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents pnlRes As Global.System.Web.UI.WebControls.Panel
+    
+    '''<summary>
+    '''Control txtCalif.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents txtCalif As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''Control btnRet2.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btnRet2 As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''Control equivField.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents equivField As Global.System.Web.UI.WebControls.HiddenField
 End Class

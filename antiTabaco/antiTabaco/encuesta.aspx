@@ -67,8 +67,7 @@
                      <input id="chk1N"  class="w3-radio" type="radio" name="chk1" value="N" checked="">No</div>
             </div>
             <div class="w3-theme-l5"><p>2) ¿Cuantos cigarrillos fuma al día?</p>
-                <div style="padding-left:5%">
-                <input  class="w3-radio" type="radio" name="chk2" value="1" >Entre 1 a 5&nbsp &nbsp
+                <div style="padding-left:5%"><input  class="w3-radio" type="radio" name="chk2" value="1" >Entre 1 a 5&nbsp &nbsp
                 <input  class="w3-radio" type="radio" name="chk2" value="2" >Entre 5 a 10&nbsp &nbsp
                 <input  class="w3-radio" type="radio" name="chk2" value="3" >1 cajetilla o mas
                 </div>
